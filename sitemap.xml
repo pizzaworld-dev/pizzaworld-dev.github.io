@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Plan du site pour Google. Mettez à jour la date (lastmod) quand une page change. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://cagnes.pizzaworld.fr/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://cagnes.pizzaworld.fr/carte.html</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+</urlset>

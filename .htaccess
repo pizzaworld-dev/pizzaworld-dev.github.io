@@ -1,0 +1,42 @@
+# Pizza World Cagnes-sur-Mer - reglages du serveur web (Apache, alwaysdata)
+# Fichier a enregistrer sans BOM. Le passage en HTTPS se regle dans alwaysdata :
+# Web > Sites > modifier le site > SSL > "Forcer HTTPS".
+
+AddDefaultCharset utf-8
+DirectoryIndex index.html
+
+# Page affichee quand une adresse n'existe pas
+ErrorDocument 404 /404.html
+
+# Anciennes adresses du site -> nouvelles pages
+# (redirections permanentes 301 : Google transfere le referencement)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^pizzas/?$ /carte.html#classiques [R=301,NE,L,NC]
+  RewriteRule ^tex-mex/?$ /carte.html#tex-mex [R=301,NE,L,NC]
+  RewriteRule ^desserts/?$ /carte.html#desserts [R=301,NE,L,NC]
+  RewriteRule ^boissons/?$ /carte.html#boissons [R=301,NE,L,NC]
+  RewriteRule ^galerie/?$ /carte.html [R=301,L,NC]
+  RewriteRule ^contact/?$ /#horaires [R=301,NE,L,NC]
+  RewriteRule ^conditions-de-livraison/?$ /#livraison [R=301,NE,L,NC]
+  RewriteRule ^mentions-legales/?$ /mentions-legales.html [R=301,L,NC]
+  RewriteRule ^qui\x20sommes-nous/?$ /#qui-sommes-nous [R=301,NE,L,NC]
+  RewriteRule ^qui-sommes-nous/?$ /#qui-sommes-nous [R=301,NE,L,NC]
+  RewriteRule ^blog(/.*)?$ / [R=301,L,NC]
+</IfModule>
+
+# Cache du navigateur : pages, styles et scripts toujours verifies
+# (une promo modifiee apparait tout de suite), images gardees 7 jours
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|xml|txt)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(jpe?g|png|svg|ico|webp|woff2?)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+# Compression des fichiers texte
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript image/svg+xml
+</IfModule>
