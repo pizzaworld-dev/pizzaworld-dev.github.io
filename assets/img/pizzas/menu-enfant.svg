@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <title>Menu enfant : nuggets, frites, jus de fruit et glace</title>
+  <defs>
+    <!-- Même fond bleu nuit que les photos de la carte -->
+    <radialGradient id="fond" cx="50%" cy="46%" r="70%">
+      <stop offset="0" stop-color="#1e3f95"/>
+      <stop offset="1" stop-color="#0a1a4e"/>
+    </radialGradient>
+    <clipPath id="cornet"><path d="M762 566 L878 566 L820 790 Z"/></clipPath>
+    <clipPath id="barquette"><path d="M418 662 L772 662 L742 808 L448 808 Z"/></clipPath>
+    <!-- Un nugget, réutilisé six fois -->
+    <symbol id="nugget" viewBox="-60 -46 120 92">
+      <path d="M-53 -5 C-57 -31 -27 -43 -3 -41 C23 -45 51 -34 55 -9 C59 15 44 39 12 41 C-19 45 -51 31 -53 -5 Z" fill="#dc9a39"/>
+      <path d="M-40 -12 C-36 -30 -10 -35 8 -33 C27 -35 43 -24 41 -11 C30 -22 -20 -25 -40 -12 Z" fill="#f4c977"/>
+      <path d="M-50 4 C-44 28 -16 38 14 36 C40 33 52 16 53 0 C50 22 30 36 8 37 C-20 40 -44 28 -50 4 Z" fill="#b8721f"/>
+      <g fill="#b8721f">
+        <circle cx="-22" cy="6" r="4"/><circle cx="5" cy="16" r="3.5"/><circle cx="28" cy="3" r="4"/>
+        <circle cx="-35" cy="17" r="3"/><circle cx="18" cy="-13" r="3"/><circle cx="-7" cy="-5" r="3"/>
+        <circle cx="38" cy="18" r="3"/><circle cx="-14" cy="24" r="3"/>
+      </g>
+    </symbol>
+    <!-- Une frite -->
+    <symbol id="frite" viewBox="0 0 30 230">
+      <rect x="1.5" y="1.5" width="27" height="227" rx="7" fill="#ffcd4a" stroke="#e5a21b" stroke-width="3"/>
+      <rect x="7" y="8" width="5" height="200" rx="2.5" fill="#ffe08a"/>
+    </symbol>
+  </defs>
+
+  <rect width="1000" height="1000" fill="url(#fond)"/>
+  <ellipse cx="510" cy="806" rx="392" ry="44" fill="#050f33" opacity=".45"/>
+
+  <!-- Jus de fruit (brique avec paille) -->
+  <g>
+    <path d="M232 348 L232 262 L282 230" fill="none" stroke="#ffffff" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M232 348 L232 262 L282 230" fill="none" stroke="#e10a0a" stroke-width="15" stroke-dasharray="14 16" stroke-linejoin="round"/>
+    <path d="M150 362 L320 362 L342 340 L172 340 Z" fill="#ffb84d"/>
+    <path d="M320 362 L342 340 L342 772 L320 794 Z" fill="#d97706"/>
+    <rect x="150" y="362" width="170" height="432" fill="#ff9f1c"/>
+    <rect x="168" y="468" width="134" height="176" rx="14" fill="#ffffff"/>
+    <circle cx="235" cy="560" r="46" fill="#ff9f1c"/>
+    <circle cx="235" cy="560" r="34" fill="#ffc15e"/>
+    <g stroke="#ff9f1c" stroke-width="5" stroke-linecap="round">
+      <path d="M235 528 L235 592"/><path d="M203 560 L267 560"/><path d="M212 537 L258 583"/><path d="M258 537 L212 583"/>
+    </g>
+    <path d="M238 512 C246 492 268 488 280 496 C270 512 252 518 238 512 Z" fill="#3aa655"/>
+    <rect x="150" y="700" width="170" height="16" fill="#e98a0c"/>
+  </g>
+
+  <!-- Frites dans leur cornet -->
+  <g>
+    <use href="#frite" x="352" y="250" width="30" height="230" transform="rotate(-14 367 365)"/>
+    <use href="#frite" x="384" y="222" width="30" height="230" transform="rotate(-7 399 337)"/>
+    <use href="#frite" x="414" y="236" width="30" height="230" transform="rotate(-2 429 351)"/>
+    <use href="#frite" x="444" y="210" width="30" height="230" transform="rotate(4 459 325)"/>
+    <use href="#frite" x="472" y="240" width="30" height="230" transform="rotate(9 487 355)"/>
+    <use href="#frite" x="500" y="226" width="30" height="230" transform="rotate(15 515 341)"/>
+    <use href="#frite" x="430" y="270" width="30" height="230" transform="rotate(-10 445 385)"/>
+    <use href="#frite" x="462" y="262" width="30" height="230" transform="rotate(6 477 377)"/>
+    <path d="M330 432 Q445 474 560 432 L535 794 L355 794 Z" fill="#e10a0a"/>
+    <path d="M515 449 Q540 444 560 432 L535 794 L497 794 Z" fill="#b80000" opacity=".35"/>
+    <path d="M336 522 L554 522 L551 562 L339 562 Z" fill="#ffffff"/>
+    <path d="M330 432 Q445 474 560 432" fill="none" stroke="#a80000" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- Glace : cornet, deux boules et une cerise -->
+  <g>
+    <path d="M762 566 L878 566 L820 790 Z" fill="#e2a95c"/>
+    <g clip-path="url(#cornet)" stroke="#c4873a" stroke-width="5">
+      <path d="M700 566 L900 766"/><path d="M700 610 L900 810"/><path d="M700 522 L900 722"/><path d="M740 500 L940 700"/>
+      <path d="M940 566 L740 766"/><path d="M940 610 L740 810"/><path d="M940 522 L740 722"/><path d="M900 500 L700 700"/>
+    </g>
+    <path d="M756 556 C756 512 788 486 820 486 C852 486 884 512 884 556 C876 572 866 560 858 574 C850 588 838 572 828 582 C818 592 806 576 796 584 C786 592 776 576 768 580 C760 584 754 570 756 556 Z" fill="#fff1cf"/>
+    <path d="M770 486 C770 446 794 420 820 420 C846 420 870 446 870 486 C862 500 854 488 846 500 C838 512 828 498 820 508 C812 516 802 500 794 508 C786 516 776 500 770 486 Z" fill="#f58bb3"/>
+    <path d="M790 446 C796 432 808 426 818 426" fill="none" stroke="#ffc2d8" stroke-width="7" stroke-linecap="round"/>
+    <g stroke-width="6" stroke-linecap="round">
+      <path d="M800 470 L810 464" stroke="#fce303"/><path d="M836 458 L846 464" stroke="#ffffff"/>
+      <path d="M822 482 L832 478" stroke="#3b82f6"/><path d="M846 486 L852 476" stroke="#fce303"/>
+      <path d="M792 492 L800 500" stroke="#ffffff"/>
+    </g>
+    <path d="M824 404 C828 384 842 374 852 372" fill="none" stroke="#2f7d32" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="820" cy="410" r="16" fill="#e10a0a"/>
+    <circle cx="814" cy="404" r="5" fill="#ff8a8a"/>
+  </g>
+
+  <!-- Six nuggets dans leur barquette -->
+  <g>
+    <use href="#nugget" x="438" y="566" width="120" height="92"/>
+    <use href="#nugget" x="536" y="556" width="120" height="92"/>
+    <use href="#nugget" x="634" y="570" width="120" height="92"/>
+    <use href="#nugget" x="466" y="610" width="120" height="92"/>
+    <use href="#nugget" x="566" y="604" width="120" height="92"/>
+    <use href="#nugget" x="658" y="618" width="108" height="84"/>
+    <path d="M418 662 L772 662 L742 808 L448 808 Z" fill="#fdf6e3"/>
+    <g clip-path="url(#barquette)" stroke="#e10a0a" stroke-width="16">
+      <path d="M452 650 L470 820"/><path d="M510 650 L522 820"/><path d="M568 650 L574 820"/>
+      <path d="M626 650 L626 820"/><path d="M684 650 L678 820"/><path d="M742 650 L730 820"/>
+    </g>
+    <path d="M418 662 L772 662" stroke="#c40000" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>
