@@ -15,13 +15,10 @@
   // Prix repris du logiciel de caisse (liste des produits finis, prix de vente TTC) le 04/11/2026.
   var SUPPLEMENTS = {
     "Fromages": {
-      "Mozzarella": 2,
       "Bleu": 1.5,
-      "Camembert": null,
-      "Cantal": null,
+      "Camembert": 4,
       "Cheddar": 1.5,
       "Chèvre": 2,
-      "Feta": 1.5,
       "Raclette": 2,
       "Reblochon": 3,
       "Double fromage": 3
@@ -41,7 +38,7 @@
     "Poissons et fruits de mer": {
       "Anchois": 1,
       "Thon": 3,
-      "Saumon": 2.5,
+      "Saumon": 3,
       "Scampis": 2.5,
       "Fruits de mer": 5
     },
@@ -64,8 +61,8 @@
     "Sauces": {
       "Sauce tomate": 0,
       "Crème": 0,
-      "Ketchup": null,
-      "Guacamole": null,
+      "Ketchup": 1,
+      "Guacamole": 1,
       "Miel": 1.5
     },
     "Herbes et épices": {
