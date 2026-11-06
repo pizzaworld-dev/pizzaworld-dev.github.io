@@ -1458,7 +1458,10 @@
         return { id: id, name: name, kicker: li.getAttribute("data-kicker") || "", price: li.getAttribute("data-price") || "", img: li.getAttribute("data-disc"), top: true, choices: choices };
       });
     }
-    var recipes = [first].concat(collectInline(), collect(doc)).filter(function (r, i, all) {
+    // Ordre de passage : la Reine, puis la liste .spin-list de l'accueil dans son ordre
+    var lead = [first].concat(collectInline());
+    var leadIds = lead.map(function (r) { return r.id; });
+    var recipes = lead.concat(collect(doc)).filter(function (r, i, all) {
       return all.map(function (x) { return x.id; }).indexOf(r.id) === i;
     });
     var cur = 0;
@@ -1558,8 +1561,13 @@
         .then(function (html) {
           var full = collect(new DOMParser().parseFromString(html, "text/html"));
           if (!full.length) return;
+          // Les recettes de l'accueil d'abord (dans leur ordre), puis le reste dans l'ordre de la carte
+          var head = leadIds.map(function (id) {
+            return full.filter(function (r) { return r.id === id; })[0];
+          }).filter(Boolean);
+          var tail = full.filter(function (r) { return leadIds.indexOf(r.id) < 0; });
           var currentId = recipes[cur].id;
-          recipes = full;
+          recipes = head.concat(tail);
           cur = Math.max(0, recipes.map(function (r) { return r.id; }).indexOf(currentId));
           var next = recipes[(cur + 1) % recipes.length];
           if (next) new Image().src = next.img;
